@@ -1,6 +1,6 @@
 {
   "name": "imageup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bounce Up Image Sizes Based on Screen Width",
   "main": "imageup.js",
   "scripts": {
