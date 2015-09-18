@@ -24,7 +24,7 @@ Mobile first image which doubles as mirage style image until hi-res image is loa
 ```
 
 #### Example 2
-Don't double loading images. Note every breekpoint is needed
+Don't double loading images. Note every breekpoint is needed. With different `ref` values it is possible to have multiple resize groups.
 
 ```html
 <img data-src='img/{src}/sample.jpg'>
