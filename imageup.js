@@ -1,4 +1,4 @@
-// ImageUp 1.0.2
+// ImageUp 1.1.0
 (function(lastResize, init, min, max, key, ref, size, sizes, width, Exports, elements, element, attribute, tagName, imageUpAttribute, imageUpAttributeSize, imageUpAttributeOrig) {
 	init                 = {};
 	imageUpAttribute     = 'ImageUp';
@@ -40,15 +40,17 @@
 		elements  = document.getElementsByTagName(tagName);
 		for (var i = 0; i < elements.length; i++) {
 			element = elements[i];
-			size    = element[imageUpAttributeSize] || 0;
-			if (max > size) {
-				element[imageUpAttributeSize] = max; // save the size for future checks, ie reorient
-				key = element[imageUpAttributeOrig] || element[attribute] || element.dataset[attribute];
-				if (key) {
-					element[imageUpAttributeOrig] = key; // save for future checks
-					key = key.replace(ref, param[max] || init[max]);
+			key = element[imageUpAttributeOrig] || element[attribute] || element.dataset[attribute];
+			if (key) {
+				element[imageUpAttributeOrig] = key; // save for future checks
+				key = key.replace(ref, param[max] || init[max]);
+				if (key != element[imageUpAttributeOrig]) { // only apply when changes are made, enables change groups
 					element[attribute] = key;
 					element.dataset[attribute] = key;
+					if (init.debug || param.debug) {
+						width = (element.id) ? '#' + element.id : ''; // reuse width field
+						console.log(tagName + width + '.' + attribute + ' ' + key);
+					}
 				}
 			}
 		}

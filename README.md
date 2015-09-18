@@ -10,7 +10,8 @@ Mobile first image which doubles as mirage style image until hi-res image is loa
 <script src="imageup.js"></script>
 <script>
     ImageUp({
-        init: 1,        // truthy means to set these values as the default configuration
+        init: 1,        // truthy to set these values as the default configuration
+        debug: 1,       // truthy to log element changes, in the form: element#id.attribute value
         tag:  'img',    // img is the default if tag is undefined
         attr: 'src',    // src is the default if attr is undefined
         ref:  '/320/',  // {src} is the default if ref undefined
