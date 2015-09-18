@@ -1,4 +1,4 @@
-// ImageUp 1.1.0
+// ImageUp 1.1.1
 (function(lastResize, init, min, max, key, ref, size, sizes, width, Exports, elements, element, attribute, tagName, imageUpAttribute, imageUpAttributeSize, imageUpAttributeOrig) {
 	init                 = {};
 	imageUpAttribute     = 'ImageUp';
